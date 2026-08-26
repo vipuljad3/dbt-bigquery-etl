@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+# test database
+test.duckdb
+
 # Distribution / packaging
 .Python
 build/
