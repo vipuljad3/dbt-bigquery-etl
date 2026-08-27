@@ -1,0 +1,19 @@
+jaffle_shop:
+  target: "{{ env_var('PROJECT_ENVIRONMENT') }}"
+  outputs:
+    prod:
+      dataset: "{{ env_var('DB_HOST_NAME') }}"
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: /path/to/bigquery/keyfile.json
+      location: US
+      method: service-account
+      priority: interactive
+      project: GCP project id
+      threads: 4
+      type: bigquery
+    test:
+      type: duckdb
+      path: "{{ env_var('DB_HOST_NAME') }}"
+      schema: main                 
+      threads: 4  

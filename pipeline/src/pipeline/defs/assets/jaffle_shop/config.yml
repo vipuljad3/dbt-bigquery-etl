@@ -1,0 +1,37 @@
+tables:
+  - name: customers
+    schema: staging
+    file_path: https://raw.githubusercontent.com/dbt-labs/jaffle-shop-data/refs/heads/main/jaffle-data/raw_customers.csv
+    args:
+      has_header: True
+      infer_schema_length: 0
+  - name: items
+    schema: staging
+    file_path: https://raw.githubusercontent.com/dbt-labs/jaffle-shop-data/refs/heads/main/jaffle-data/raw_items.csv
+    args:
+      has_header: True
+      infer_schema_length: 0
+  - name: orders
+    schema: staging
+    file_path: https://raw.githubusercontent.com/dbt-labs/jaffle-shop-data/refs/heads/main/jaffle-data/raw_orders.csv
+    args:
+      has_header: True
+      infer_schema_length: 0
+  - name: products
+    schema: staging
+    file_path: https://raw.githubusercontent.com/dbt-labs/jaffle-shop-data/refs/heads/main/jaffle-data/raw_products.csv
+    args:
+      has_header: True
+      infer_schema_length: 0
+  - name: stores
+    schema: staging
+    file_path: https://raw.githubusercontent.com/dbt-labs/jaffle-shop-data/refs/heads/main/jaffle-data/raw_stores.csv
+    args:
+      has_header: True
+      infer_schema_length: 0
+  - name: supplies
+    schema: staging
+    file_path: https://raw.githubusercontent.com/dbt-labs/jaffle-shop-data/refs/heads/main/jaffle-data/raw_supplies.csv
+    args:
+      has_header: True
+      infer_schema_length: 0

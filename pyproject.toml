@@ -1,0 +1,23 @@
+[project]
+name = "dbt-bigquery-etl"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "dbt>=1.0.0.40.18",
+    "dbt-bigquery>=1.12.0",
+    "dbt-duckdb>=1.11.0",
+    "google-cloud-bigquery>=3.44.0",
+    "polars>=1.44.1",
+    "python-dotenv>=1.2.3",
+    "pyyaml>=6.0.3",
+    "requests>=2.34.2",
+]
+
+[project.scripts]
+dbt-bigquery-etl = "dbt_bigquery_etl:main"
+
+[build-system]
+requires = ["uv_build>=0.12.6,<0.13.0"]
+build-backend = "uv_build"
