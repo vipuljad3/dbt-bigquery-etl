@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: jaffle_shop
+  - name: staging
     description: This is a replica of the Postgres database used by our app.
     database: jaffle_shop  # Update this to match your warehouse database (e.g., dbt-tutorial, raw_data)
     schema: staging
