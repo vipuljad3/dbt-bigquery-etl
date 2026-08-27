@@ -1,4 +1,4 @@
 select
     *
     
-from {{ source('jaffle_shop', 'products') }}
+from {{ source('staging', 'products') }}

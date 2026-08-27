@@ -2,4 +2,4 @@
 select
     *
     
-from {{ source('jaffle_shop', 'customers') }}
+from {{ source('staging', 'customers') }}
