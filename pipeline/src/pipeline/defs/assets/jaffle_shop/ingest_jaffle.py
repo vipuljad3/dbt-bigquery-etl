@@ -1,7 +1,10 @@
 import yaml
 import polars as pl
 from dagster import Definitions, asset, file_relative_path
+import os 
 
+
+ENV=os.getenv('PROJECT_ENVIRONMENT', None)
 
 YAML_FILE_PATH = file_relative_path(__file__, "config.yml")
 with open(YAML_FILE_PATH, "r", encoding="utf-8") as file:
@@ -19,7 +22,7 @@ def build_ingestion_asset(table_def: dict):
         name=table_def["name"],
         key_prefix= table_def["schema"],
         group_name="jaffle_shop",
-        kinds={"polars", "duckdb"} 
+        kinds={"polars", "snowflake" if ENV=='prod' else 'duckdb'} 
     )
     def _dynamic_asset() -> pl.DataFrame:
         return pl.read_csv(

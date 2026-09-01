@@ -8,7 +8,10 @@ dependencies = [
     "dagster-duckdb>=0.29.19",
     "dagster-duckdb-polars>=0.29.19",
     "dagster-polars>=0.27.12",
+    "dagster-snowflake>=0.29.19",
+    "dagster-snowflake-polars>=0.29.19",
     "dbt-duckdb>=1.11.0",
+    "dbt-snowflake>=1.12.0",
     "duckdb>=1.5.5",
     "polars>=1.44.1",
 ]
