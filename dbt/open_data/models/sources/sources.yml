@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: staging
+    description: This is a replica of the Postgres database used by our app.
+    database: open_data  # Update this to match your warehouse database (e.g., dbt-tutorial, raw_data)
+    schema: staging
+    tables:
+      - name: monthly_counts_per_hour
+        description: Monthly peds count.
+      - name: sensor_locations
+        description: Sensor Locations In Melbourne.

@@ -1,0 +1,19 @@
+open_data:
+  target: "{{ env_var('PROJECT_ENVIRONMENT') }}"
+  outputs:
+    prod:
+      type: snowflake
+      account: "{{ env_var('showflake_account') }}" # e.g., xy12345.us-east-1
+      user: "{{ env_var('showflake_user') }}"
+      password: "{{ env_var('showflake_password') }}"
+      role: "{{ env_var('showflake_role') }}"               # e.g., dbt_role
+      database: open_data      # e.g., analytics
+      warehouse: "{{ env_var('showflake_warehouse') }}"     # e.g., compute_wh
+      schema: "{{ env_var('showflake_schema') }}"           # e.g., public
+      threads: 4                       # Number of concurrent models
+      client_session_keep_alive: False
+    test:
+      type: duckdb
+      path: "{{ env_var('duckdb_file_path') }}"
+      schema: main                 
+      threads: 4  
