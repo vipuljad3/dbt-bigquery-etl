@@ -7,7 +7,7 @@ jaffle_shop:
       user: "{{ env_var('showflake_user') }}"
       password: "{{ env_var('showflake_password') }}"
       role: "{{ env_var('showflake_role') }}"               # e.g., dbt_role
-      database: "{{ env_var('showflake_database') }}"       # e.g., analytics
+      database: JAFFLE_SHOP      # e.g., analytics
       warehouse: "{{ env_var('showflake_warehouse') }}"     # e.g., compute_wh
       schema: "{{ env_var('showflake_schema') }}"           # e.g., public
       threads: 4                       # Number of concurrent models
