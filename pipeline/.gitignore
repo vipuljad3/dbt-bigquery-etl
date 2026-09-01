@@ -3,6 +3,7 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+*.local_defs_state/
 # C extensions
 *.so
 .tmp_*
