@@ -3,5 +3,5 @@ type: dagster_dbt.DbtProjectComponent
 attributes:
   project: '{{ context.project_root }}/../dbt/jaffle_shop'
   translation:
-    group_name: jaffle_shop
-    description: "Jaffle Shop"
+    group_name: JAFFLE_SHOP
+    description: "Jaffle Shop DBT"

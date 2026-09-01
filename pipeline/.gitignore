@@ -2,6 +2,7 @@
 __pycache__/
 *.py[codz]
 *$py.class
+*.dg
 
 *.local_defs_state/
 # C extensions

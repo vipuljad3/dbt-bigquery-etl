@@ -1,0 +1,93 @@
+tables:
+  - name: pedestrian-counting-system-sensor-locations
+    table_name: sensor_locations
+    lookback : False
+    open_api_url : https://data.melbourne.vic.gov.au/api/records/1.0/search/
+    overwrite_sourced : False
+    schema: staging
+    columns:
+      - name: location_id
+        data_type: int64
+        description: "Unique identifier for the sensor location."
+        
+      - name: sensor_name
+        data_type: string
+        description: "Name of the pedestrian sensor."
+
+      - name: sensor_description
+        data_type: string
+        description: "Detailed description of the sensor."
+
+      - name: location_type
+        data_type: string
+        description: "Type of location where the sensor is installed."
+
+      - name: status
+        data_type: string
+        description: "Current operational status of the sensor (e.g., Active, Inactive)."
+
+      - name: installation_date
+        data_type: string
+        description: "Date the sensor was installed."
+
+      - name: direction_1
+        data_type: string
+        description: "Primary direction of pedestrian movement captured."
+
+      - name: direction_2
+        data_type: string
+        description: "Secondary direction of pedestrian movement captured."
+
+      - name: latitude
+        data_type: float64
+        description: "Latitude coordinate of the sensor."
+
+      - name: longitude
+        data_type: float64
+        description: "Longitude coordinate of the sensor."
+
+      - name: note
+        data_type: string
+        description: "Additional notes regarding the sensor."
+
+
+  - name: pedestrian-counting-system-monthly-counts-per-hour
+    table_name: monthly_counts_per_hour
+    lookback : True
+    lookback_days : 10
+    open_api_url : https://data.melbourne.vic.gov.au/api/records/1.0/search/
+    source_date_column : sensing_date 
+    overwrite_sourced : False
+    schema: staging
+    columns:
+      - name: id
+        data_type: int64
+        description: "Unique identifier for the specific count record."
+
+      - name: sensing_date
+        data_type: string
+        description: "Date and time the pedestrian count was recorded."
+
+      - name: hourday
+        data_type: int64
+        description: "The hour of the day the reading took place (e.g., 0-23)."
+
+      - name: pedestriancount
+        data_type: int64
+        description: "Total number of pedestrians counted during this time period."
+
+      - name: location_id
+        data_type: int64
+        description: "Identifier linking to the specific sensor location."
+
+      - name: sensor_name
+        data_type: string
+        description: "Name of the sensor recording the data."
+
+      - name: direction_1
+        data_type: int64
+        description: "Count of pedestrians moving in the primary direction."
+
+      - name: direction_2
+        data_type: int64
+        description: "Count of pedestrians moving in the secondary direction."
